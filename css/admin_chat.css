@@ -1,0 +1,514 @@
+/* Секція адмін-чату */
+.admin-chat-section {
+    margin-bottom: 3rem; /* Відстань знизу */
+    padding: 3rem; /* Відступи */
+    background: #f5f5f5; /* Світлий фон */
+    border-radius: 12px; /* Закруглені кути */
+    box-shadow: var(--shadow); /* Тінь */
+    transition: var(--transition); /* Плавна анімація */
+    box-sizing: border-box; /* Враховує відступи в розмірах */
+}
+
+/* Темна тема для секції */
+body.dark-theme .admin-chat-section {
+    background: #2a2a3b; /* Темний фон */
+}
+
+/* Контейнер адмін-чату */
+.admin-chat-container {
+    display: flex; /* Гнучкий контейнер */
+    gap: 2rem; /* Відстань між елементами */
+    max-width: 1400px; /* Максимальна ширина */
+    margin: 0 auto; /* Вирівнювання по центру */
+    align-items: stretch; /* Розтягнення елементів */
+}
+
+/* Список користувачів */
+.user-list {
+    min-width: 350px; /* Мінімальна ширина */
+    display: flex; /* Гнучкий контейнер */
+    flex-direction: column; /* Вертикальне розташування */
+    gap: 1rem; /* Відстань між елементами */
+}
+
+/* Заголовок списку користувачів */
+.user-list h3 {
+    margin-bottom: 1rem; /* Відстань знизу */
+    color: #333; /* Темний колір */
+    font-weight: 600; /* Жирний шрифт */
+    font-size: 1.5rem; /* Розмір шрифту */
+    line-height: 1.5; /* Висота рядка */
+}
+
+/* Темна тема для заголовка */
+body.dark-theme .user-list h3 {
+    color: #d3d3d3; /* Світлий колір */
+}
+
+/* Список користувачів */
+.user-list ul {
+    list-style: none; /* Без маркерів */
+    padding: 0; /* Без відступів */
+    margin: 0; /* Без полів */
+}
+
+/* Елемент списку користувачів */
+.user-list li {
+    display: flex; /* Гнучкий контейнер */
+    align-items: center; /* Вирівнювання по вертикалі */
+    padding: 1rem 1.5rem; /* Відступи */
+    margin-bottom: 0.5rem; /* Відстань знизу */
+    background: #ffffff; /* Білий фон */
+    border-radius: 8px; /* Закруглені кути */
+    cursor: pointer; /* Курсор при наведенні */
+    transition: var(--transition); /* Плавна анімація */
+    animation: fadeIn 0.5s ease-in-out; /* Анімація появи */
+    box-sizing: border-box; /* Враховує відступи */
+    padding-right: 3rem; /* Простір для позначки */
+}
+
+/* Темна тема для елемента списку */
+body.dark-theme .user-list li {
+    background: #3a3a4e; /* Темний фон */
+}
+
+/* Ефект при наведенні та для активного користувача */
+.user-list li:hover,
+.user-list li.active {
+    background: #e0e0e0; /* Світліший фон */
+}
+
+/* Темна тема для ефекту */
+body.dark-theme .user-list li:hover,
+body.dark-theme .user-list li.active {
+    background: #555; /* Темний фон */
+}
+
+/* Виділення користувачів із непрочитаними повідомленнями */
+.user-list li[data-unread-count]:not([data-unread-count="0"]) {
+    font-weight: 600; /* Жирний шрифт */
+}
+
+/* Позначка непрочитаних повідомлень */
+.user-unread-count {
+    display: inline-flex; /* Вбудований гнучкий контейнер */
+    align-items: center; /* Вирівнювання по вертикалі */
+    justify-content: center; /* Вирівнювання по горизонталі */
+    background: #ff9800; /* Помаранчевий фон */
+    color: #fff; /* Білий текст */
+    font-size: 0.85rem; /* Розмір шрифту */
+    padding: 0.25rem 0.6rem; /* Відступи */
+    border-radius: 10px; /* Закруглені кути */
+    position: absolute; /* Абсолютне позиціонування */
+    right: 0.75rem; /* Відстань справа */
+    top: 50%; /* По центру вертикально */
+    transform: translateY(-50%); /* Зміщення для центрування */
+    animation: slideIn 0.5s ease-in-out; /* Анімація появи */
+}
+
+/* Темна тема для позначки */
+body.dark-theme .user-unread-count {
+    background: #ef6c00; /* Темніший помаранчевий */
+}
+
+/* Поле пошуку */
+.search-input {
+    width: 100%; /* Повна ширина */
+    padding: 1rem 1.5rem; /* Відступи */
+    margin-bottom: 1rem; /* Відстань знизу */
+    border-radius: 8px; /* Закруглені кути */
+    border: 1px solid #e0e0e0; /* Світла рамка */
+    background: #ffffff; /* Білий фон */
+    transition: var(--transition); /* Плавна анімація */
+    font-size: 1.1rem; /* Розмір шрифту */
+    display: block; /* Блоковий елемент */
+    box-sizing: border-box; /* Враховує відступи */
+    line-height: 1.5; /* Висота рядка */
+}
+
+/* Темна тема для поля пошуку */
+body.dark-theme .search-input {
+    background: #3a3a4e; /* Темний фон */
+    color: var(--text-dark); /* Світлий текст */
+    border-color: #555; /* Темна рамка */
+}
+
+/* Ефект при фокусі на полі пошуку */
+.search-input:focus {
+    outline: none; /* Без обведення */
+    border-color: #4a4a4a; /* Темна рамка */
+    box-shadow: 0 0 0 3px rgba(74, 74, 74, 0.2); /* Тінь */
+}
+
+/* Темна тема для фокусу */
+body.dark-theme .search-input:focus {
+    border-color: #bbb; /* Світла рамка */
+    box-shadow: 0 0 0 3px rgba(187, 187, 187, 0.2); /* Тінь */
+}
+
+/* Область чату */
+.chat-area {
+    flex: 1; /* Займає доступний простір */
+    display: flex; /* Гнучкий контейнер */
+    flex-direction: column; /* Вертикальне розташування */
+    gap: 1.5rem; /* Відстань між елементами */
+}
+
+/* Заголовок області чату */
+.chat-area h3 {
+    margin-bottom: 0; /* Без відступу знизу */
+    color: #333; /* Темний колір */
+    font-weight: 600; /* Жирний шрифт */
+    font-size: 1.5rem; /* Розмір шрифту */
+    line-height: 1.5; /* Висота рядка */
+}
+
+/* Темна тема для заголовка */
+body.dark-theme .chat-area h3 {
+    color: #d3d3d3; /* Світлий колір */
+}
+
+/* Контейнер повідомлень */
+.chat-messages {
+    max-height: 600px; /* Максимальна висота */
+    overflow-y: auto; /* Прокрутка по вертикалі */
+    padding: 1.5rem; /* Відступи */
+    background: #ffffff; /* Білий фон */
+    border-radius: 8px; /* Закруглені кути */
+    border: 1px solid #e0e0e0; /* Світла рамка */
+    animation: fadeIn 0.5s ease-in-out; /* Анімація появи */
+    box-sizing: border-box; /* Враховує відступи */
+}
+
+/* Темна тема для повідомлень */
+body.dark-theme .chat-messages {
+    background: #3a3a4e; /* Темний фон */
+    border-color: #555; /* Темна рамка */
+}
+
+/* Повідомлення */
+.message {
+    display: flex; /* Гнучкий контейнер */
+    flex-direction: column; /* Вертикальне розташування */
+    margin-bottom: 1.5rem; /* Відстань знизу */
+    padding: 1rem 1.5rem; /* Відступи */
+    border-radius: 8px; /* Закруглені кути */
+    max-width: 85%; /* Максимальна ширина */
+    word-wrap: break-word; /* Перенос слів */
+    border-left: 2px solid transparent; /* Прозора рамка зліва */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тінь */
+    animation: fadeIn 0.5s ease-in-out; /* Анімація появи */
+    box-sizing: border-box; /* Враховує відступи */
+}
+
+/* Повідомлення користувача */
+.message.user {
+    background: #4a4a4a; /* Темний фон */
+    color: #fff; /* Білий текст */
+    margin-left: auto; /* Вирівнювання справа */
+    border-left-color: #666; /* Світліша рамка */
+}
+
+/* Темна тема для повідомлення користувача */
+body.dark-theme .message.user {
+    background: #bbb; /* Світлий фон */
+    border-left-color: #ddd; /* Світла рамка */
+}
+
+/* Повідомлення адміністратора */
+.message.admin {
+    background: #4caf50; /* Зелений фон */
+    color: #fff; /* Білий текст */
+    margin-right: auto; /* Вирівнювання зліва */
+    border-left-color: #388e3c; /* Темніша рамка */
+}
+
+/* Темна тема для повідомлення адміністратора */
+body.dark-theme .message.admin {
+    background: #388e3c; /* Темніший зелений */
+    border-left-color: #2e7d32; /* Темна рамка */
+}
+
+/* Заголовок повідомлення */
+.message .message-header {
+    font-size: 0.95rem; /* Розмір шрифту */
+    margin-bottom: 0.5rem; /* Відстань знизу */
+    opacity: 0.8; /* Напівпрозорість */
+    line-height: 1.5; /* Висота рядка */
+}
+
+/* Текст повідомлення */
+.message .message-text {
+    font-size: 1.1rem; /* Розмір шрифту */
+    line-height: 1.5; /* Висота рядка */
+}
+
+/* Поле вводу */
+.chat-input {
+    display: flex; /* Гнучкий контейнер */
+    gap: 1.5rem; /* Відстань між елементами */
+    align-items: stretch; /* Розтягнення елементів */
+    width: 100%; /* Повна ширина */
+    box-sizing: border-box; /* Враховує відступи */
+}
+
+/* Текстове поле */
+textarea {
+    width: 100%; /* Повна ширина */
+    padding: 1rem 1.5rem; /* Відступи */
+    border-radius: 8px; /* Закруглені кути */
+    border: 1px solid #e0e0e0; /* Світла рамка */
+    background: #ffffff; /* Білий фон */
+    transition: var(--transition); /* Плавна анімація */
+    font-size: 1.1rem; /* Розмір шрифту */
+    resize: none; /* Без зміни розміру */
+    min-height: 100px; /* Мінімальна висота */
+    box-sizing: border-box; /* Враховує відступи */
+    line-height: 1.5; /* Висота рядка */
+}
+
+/* Темна тема для текстового поля */
+body.dark-theme textarea {
+    background: #3a3a4e; /* Темний фон */
+    color: var(--text-dark); /* Світлий текст */
+    border-color: #555; /* Темна рамка */
+}
+
+/* Ефект при фокусі */
+textarea:focus {
+    outline: none; /* Без обведення */
+    border-color: #4a4a4a; /* Темна рамка */
+    box-shadow: 0 0 0 3px rgba(74, 74, 74, 0.2); /* Тінь */
+}
+
+/* Темна тема для фокусу */
+body.dark-theme textarea:focus {
+    border-color: #bbb; /* Світла рамка */
+    box-shadow: 0 0 0 3px rgba(187, 187, 187, 0.2); /* Тінь */
+}
+
+/* Кнопки */
+.btn {
+    padding: 1rem 2rem; /* Відступи */
+    border: none; /* Без рамки */
+    border-radius: 8px; /* Закруглені кути */
+    font-size: 1.1rem; /* Розмір шрифту */
+    cursor: pointer; /* Курсор при наведенні */
+    transition: var(--transition); /* Плавна анімація */
+    box-sizing: border-box; /* Враховує відступи */
+}
+
+/* Кнопка відправлення */
+.send-btn {
+    background: #4a4a4a; /* Темний фон */
+    color: #fff; /* Білий текст */
+}
+
+/* Ефект при наведенні */
+.send-btn:hover {
+    background: #666; /* Світліший фон */
+}
+
+/* Темна тема для кнопки відправлення */
+body.dark-theme .send-btn {
+    background: #bbb; /* Світлий фон */
+}
+
+/* Ефект при наведенні в темній темі */
+body.dark-theme .send-btn:hover {
+    background: #fff; /* Білий фон */
+    color: #333; /* Темний текст */
+}
+
+/* Кнопка видалення */
+.delete-btn {
+    background: #d32f2f; /* Червоний фон */
+    color: #fff; /* Білий текст */
+    margin-bottom: 1rem; /* Відстань знизу */
+}
+
+/* Ефект при наведенні */
+.delete-btn:hover {
+    background: #b71c1c; /* Темніший червоний */
+}
+
+/* Темна тема для кнопки видалення */
+body.dark-theme .delete-btn {
+    background: #b71c1c; /* Темніший червоний */
+}
+
+/* Ефект при наведенні в темній темі */
+body.dark-theme .delete-btn:hover {
+    background: #d32f2f; /* Червоний фон */
+}
+
+/* Лічильник непрочитаних повідомлень */
+.unread-count {
+    display: inline-flex; /* Вбудований гнучкий контейнер */
+    align-items: center; /* Вирівнювання по вертикалі */
+    justify-content: center; /* Вирівнювання по горизонталі */
+    background: #ff9800; /* Помаранчевий фон */
+    color: #fff; /* Білий текст */
+    font-size: 0.9rem; /* Розмір шрифту */
+    padding: 0.25rem 0.6rem; /* Відступи */
+    border-radius: 12px; /* Закруглені кути */
+    margin-left: 0.5rem; /* Відстань зліва */
+    animation: slideIn 0.5s ease-in-out; /* Анімація появи */
+    transition: opacity 0.3s ease-out; /* Плавне зникнення */
+}
+
+/* Ефект зникнення лічильника */
+.unread-count.remove {
+    opacity: 0; /* Невидимо */
+}
+
+/* Темна тема для лічильника */
+body.dark-theme .unread-count {
+    background: #ef6c00; /* Темніший помаранчевий */
+}
+
+/* Позначка непрочитаних повідомлень для користувача */
+.user-unread-count {
+    display: inline-flex; /* Вбудований гнучкий контейнер */
+    align-items: center; /* Вирівнювання по вертикалі */
+    justify-content: center; /* Вирівнювання по горизонталі */
+    background: #ff9800; /* Помаранчевий фон */
+    color: #fff; /* Білий текст */
+    font-size: 0.85rem; /* Розмір шрифту */
+    padding: 0.25rem 0.6rem; /* Відступи */
+    border-radius: 10px; /* Закруглені кути */
+    position: absolute; /* Абсолютне позиціонування */
+    right: 0.75rem; /* Відстань справа */
+    top: 50%; /* По центру вертикально */
+    transform: translateY(-50%); /* Зміщення для центрування */
+    animation: slideIn 0.5s ease-in-out; /* Анімація появи */
+}
+
+/* Темна тема для позначки */
+body.dark-theme .user-unread-count {
+    background: #ef6c00; /* Темніший помаранчевий */
+}
+
+/* Дебаг-інформація */
+.debug-info {
+    font-size: 0.95rem; /* Розмір шрифту */
+    color: #666; /* Сірий колір */
+    margin-top: 1rem; /* Відстань зверху */
+    line-height: 1.5; /* Висота рядка */
+}
+
+/* Темна тема для дебага */
+body.dark-theme .debug-info {
+    color: #aaa; /* Світліший сірий */
+}
+
+/* Загальні стилі для тексту */
+p {
+    font-size: 1.1rem; /* Розмір шрифту */
+    line-height: 1.8; /* Висота рядка */
+    margin-bottom: 1.5rem; /* Відстань знизу */
+    color: var(--text-light); /* Колір тексту */
+}
+
+/* Темна тема для тексту */
+body.dark-theme p {
+    color: var(--text-dark); /* Колір тексту */
+}
+
+/* Заголовок */
+h2 {
+    color: #333; /* Темний колір */
+    font-weight: 700; /* Жирний шрифт */
+    margin-bottom: 1rem; /* Відстань знизу */
+    font-size: 2rem; /* Розмір шрифту */
+    line-height: 1.5; /* Висота рядка */
+}
+
+/* Темна тема для заголовка */
+body.dark-theme h2 {
+    color: #d3d3d3; /* Світлий колір */
+}
+
+/* Анімація появи */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); } /* Початок: невидимо, зміщення вниз */
+    to { opacity: 1; transform: translateY(0); } /* Кінець: видно, на місці */
+}
+
+/* Анімація зсуву вниз */
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; } /* Початок: зміщення вгору, невидимо */
+    to { transform: translateY(0); opacity: 1; } /* Кінець: на місці, видно */
+}
+
+/* Адаптивність для екранів до 768px */
+@media (max-width: 768px) {
+    .admin-chat-section {
+        padding: 2rem; /* Менші відступи */
+    }
+
+    .admin-chat-container {
+        flex-direction: column; /* Вертикальне розташування */
+        gap: 1rem; /* Менша відстань */
+    }
+
+    .user-list {
+        min-width: 100%; /* Повна ширина */
+    }
+
+    .chat-messages {
+        max-height: 450px; /* Менша висота */
+        padding: 1rem; /* Менші відступи */
+    }
+
+    .chat-input {
+        flex-direction: column; /* Вертикальне розташування */
+        align-items: stretch; /* Розтягнення елементів */
+    }
+
+    textarea {
+        padding: 0.75rem 1rem; /* Менші відступи */
+        font-size: 1rem; /* Менший шрифт */
+        min-height: 80px; /* Менша висота */
+    }
+
+    .send-btn, .delete-btn {
+        width: 100%; /* Повна ширина */
+        padding: 0.75rem; /* Менші відступи */
+        font-size: 1rem; /* Менший шрифт */
+    }
+
+    .user-list li {
+        padding: 0.75rem 1rem; /* Менші відступи */
+        padding-right: 2.5rem; /* Простір для позначки */
+    }
+
+    .search-input {
+        padding: 0.75rem 1rem; /* Менші відступи */
+        font-size: 1rem; /* Менший шрифт */
+    }
+}
+
+/* Адаптивність для екранів до 480px */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.4rem; /* Менший розмір заголовка */
+    }
+
+    .message .message-text {
+        font-size: 1rem; /* Менший шрифт тексту */
+    }
+
+    .message .message-header {
+        font-size: 0.9rem; /* Менший шрифт заголовка */
+    }
+
+    .user-list h3,
+    .chat-area h3 {
+        font-size: 1.2rem; /* Менший розмір заголовка */
+    }
+
+    p {
+        font-size: 1rem; /* Менший розмір тексту */
+    }
+}

@@ -1,0 +1,376 @@
+/* Загальні стилі для секцій */
+section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--card-bg-light);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+body.dark-theme section {
+    background: var(--card-bg-dark);
+}
+
+/* Секція галереї */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.gallery-item {
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-theme .gallery-item img:hover {
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.15);
+}
+
+.gallery-item p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+body.dark-theme .gallery-item p {
+    color: var(--text-dark);
+}
+
+/* Секція досягнень */
+.achievements-content {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.achievements-text {
+    flex: 2;
+}
+
+.achievements-image {
+    flex: 1;
+}
+
+.achievements-image img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: var(--transition);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.achievements-image img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-theme .achievements-image img:hover {
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.15);
+}
+
+/* Секція місії */
+.mission-content {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.mission-text {
+    flex: 2;
+}
+
+.mission-image {
+    flex: 1;
+}
+
+.mission-image img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: var(--transition);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.mission-image img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-theme .mission-image img:hover {
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.15);
+}
+
+/* Секція команди */
+.team-image {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.team-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    transition: var(--transition);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.team-image img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-theme .team-image img:hover {
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.15);
+}
+
+.team-image p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+body.dark-theme .team-image p {
+    color: var(--text-dark);
+}
+
+/* Секція контактів */
+.contact-content {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.contact-details {
+    flex: 2;
+}
+
+.contact-image {
+    flex: 1;
+}
+
+.contact-image img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: var(--transition);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.contact-image img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-theme .contact-image img:hover {
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.15);
+}
+
+/* Стилі для кнопки зворотного зв’язку */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-block;
+    text-decoration: none;
+}
+
+.feedback-btn {
+    background: #4a4a4a;
+    color: #fff;
+}
+
+.feedback-btn:hover {
+    background: #666;
+}
+
+body.dark-theme .feedback-btn {
+    background: #bbb;
+}
+
+body.dark-theme .feedback-btn:hover {
+    background: #fff;
+    color: #333;
+}
+
+/* Стилі для текстових блоків */
+.text-block {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #fafafa;
+    border-radius: 8px;
+    border-left: 3px solid #4a4a4a;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+body.dark-theme .text-block {
+    background: #3c3c50;
+    border-left-color: #bbb;
+}
+
+.text-block h4 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #4a4a4a;
+}
+
+body.dark-theme .text-block h4 {
+    color: #bbb;
+}
+
+.text-block p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.text-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+}
+
+.text-block ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.text-block ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #4a4a4a;
+}
+
+body.dark-theme .text-block ul li::before {
+    color: #bbb;
+}
+
+/* Стилі для посилань */
+a {
+    color: #4a4a4a;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+body.dark-theme a {
+    color: #bbb;
+}
+
+a:hover {
+    color: #666;
+}
+
+body.dark-theme a:hover {
+    color: #fff;
+}
+
+/* Загальні стилі для тексту */
+p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+body.dark-theme p {
+    color: var(--text-dark);
+}
+
+h2, h3 {
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+body.dark-theme h2,
+body.dark-theme h3 {
+    color: #d3d3d3;
+}
+
+/* Анімації */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideOut {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-20px); opacity: 0; }
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    section {
+        padding: 1.5rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .gallery-item img {
+        height: 120px;
+    }
+
+    .achievements-content, .mission-content, .contact-content {
+        flex-direction: column;
+    }
+
+    .achievements-image img, .mission-image img, .contact-image img {
+        max-height: 150px;
+    }
+
+    .team-image img {
+        max-width: 100%;
+    }
+
+    .text-block {
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    .text-block h4 {
+        font-size: 1rem;
+    }
+}

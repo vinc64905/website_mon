@@ -1,0 +1,156 @@
+/* Імпорт сучасного шрифту з Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Базові стилі */
+:root {
+    --primary-color: #4a4a4a; /* Темно-сірий */
+    --accent-color: #d3d3d3; /* Світло-сірий */
+    --background-light: #f5f5f5; /* Дуже світло-сірий фон */
+    --background-dark: #1c2526; /* Темно-сірий фон для темної теми */
+    --text-light: #333333; /* Темно-сірий текст для світлої теми */
+    --text-dark: #e0e0e0; /* Світло-сірий текст для темної теми */
+    --card-bg-light: #ffffff; /* Білий фон для карток у світлій темі */
+    --card-bg-dark: #2f2f2f; /* Темно-сірий фон для карток у темній темі */
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--text-light);
+    background-color: var(--background-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: var(--transition);
+}
+
+/* Темна тема */
+body.dark-theme {
+    color: var(--text-dark);
+    background-color: var(--background-dark);
+}
+
+/* Хедер */
+header {
+    background: linear-gradient(135deg, var(--primary-color), #333333);
+    color: var(--accent-color);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+nav a {
+    color: var(--accent-color);
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: #ffffff;
+    transform: scale(1.05);
+    display: inline-block;
+}
+
+/* Основний контент */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    flex: 1 0 auto;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color), #333333);
+    color: var(--accent-color);
+    text-decoration: none;
+    border-radius: 8px;
+    margin: 0.5rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #333333, var(--primary-color));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Футер */
+footer {
+    background-color: var(--card-bg-light);
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    flex-shrink: 0;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme footer {
+    background-color: var(--card-bg-dark);
+}
+
+/* Перемикач тем */
+.theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--accent-color);
+    transition: var(--transition);
+}
+
+.theme-toggle:hover {
+    color: #ffffff;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    nav a {
+        margin: 0.5rem 0;
+    }
+    
+    main {
+        padding: 1rem;
+    }
+    
+    .btn {
+        display: block;
+        text-align: center;
+        padding: 0.5rem 1rem;
+    }
+}

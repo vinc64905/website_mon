@@ -1,0 +1,44 @@
+/* Стилі для кластерів */
+.custom-cluster {
+    background: var(--primary-color, #4a4a4a);
+    border-radius: 50%;
+    color: var(--accent-color, #ffffff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: var(--shadow, 0 4px 12px rgba(0, 0, 0, 0.1));
+}
+
+body.dark-theme .custom-cluster {
+    background: var(--accent-color, #ffffff);
+    color: var(--primary-color, #4a4a4a);
+}
+
+.cluster-icon {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+/* Стилі для кастомних маркерів */
+.custom-marker {
+    background: transparent;
+    border: none;
+}
+
+/* Стилі для карти */
+#map {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    box-shadow: var(--shadow, 0 4px 12px rgba(0, 0, 0, 0.1));
+}
+
+@media (max-width: 768px) {
+    #map {
+        height: 300px;
+    }
+}

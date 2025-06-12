@@ -1,0 +1,495 @@
+/* responsive.css - Адаптивні стилі для всіх сторінок проєкту */
+
+/* Імпорт шрифту з common.css для консистентності */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Використання змінних з common.css */
+:root {
+    --primary-color: #4a4a4a;
+    --accent-color: #d3d3d3;
+    --background-light: #f5f5f5;
+    --background-dark: #1c2526;
+    --text-light: #333333;
+    --text-dark: #e0e0e0;
+    --card-bg-light: #ffffff;
+    --card-bg-dark: #2f2f2f;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Базові стилі для малих екранів (до 480px) */
+@media (max-width: 480px) {
+    /* Загальні стилі */
+    body {
+        font-size: 0.9rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Хедер */
+    header {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    nav a {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Форми */
+    form {
+        padding: 1rem;
+    }
+
+    .form-section, .form-group {
+        padding: 0.75rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    select {
+        background-size: 0.8rem;
+        padding-right: 1.5rem;
+    }
+
+    .form-group-inline {
+        grid-template-columns: 1fr;
+    }
+
+    .submit-btn, .cancel-btn, .action-btn, .reset-filters {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    /* Таблиці */
+    .table-wrapper {
+        margin: 0 -0.5rem;
+    }
+
+    table {
+        min-width: 300px;
+        font-size: 0.8rem;
+    }
+
+    th, td {
+        padding: 0.5rem;
+    }
+
+    td img {
+        max-width: 60px;
+    }
+
+    /* Карта */
+    #map {
+        height: 250px;
+    }
+
+    .map-legend {
+        padding: 0.5rem;
+        bottom: 10px;
+        right: 10px;
+        font-size: 0.8rem;
+    }
+
+    /* Чат */
+    .admin-chat-container, .chat-container {
+        flex-direction: column;
+    }
+
+    .user-list {
+        min-width: 100%;
+    }
+
+    .chat-messages {
+        max-height: 300px;
+        padding: 0.75rem;
+    }
+
+    .chat-input {
+        flex-direction: column;
+    }
+
+    textarea {
+        min-height: 80px;
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    .message .message-text {
+        font-size: 0.9rem;
+    }
+
+    .message .message-header {
+        font-size: 0.8rem;
+    }
+
+    /* Сітки */
+    .stats-grid, .features-grid, .reports-grid, .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-item, .feature-item, .report-card, .gallery-item {
+        min-width: 100%;
+    }
+
+    .gallery-item img {
+        height: 100px;
+    }
+
+    /* Повідомлення */
+    .success-message, .error-message, .filter-message {
+        font-size: 0.9rem;
+        padding: 0.75rem;
+    }
+
+    .success-message .close-btn {
+        font-size: 1.2rem;
+    }
+
+    /* Пагінація */
+    .pagination {
+        flex-wrap: wrap;
+        gap: 0.3rem;
+    }
+
+    .pagination .btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Стилі для середніх екранів (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    /* Загальні стилі */
+    body {
+        font-size: 0.95rem;
+    }
+
+    main {
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    /* Хедер */
+    header {
+        padding: 1.2rem;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    nav a {
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+
+    /* Форми */
+    .form-section {
+        padding: 1.2rem;
+    }
+
+    form {
+        padding: 1.2rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 0.95rem;
+        padding: 0.6rem;
+    }
+
+    .form-group-inline {
+        grid-template-columns: 1fr;
+    }
+
+    .submit-btn, .cancel-btn, .action-btn, .reset-filters {
+        font-size: 0.95rem;
+        padding: 0.6rem 1rem;
+    }
+
+    /* Фільтри */
+    .filter-form, .filters form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-group {
+        max-width: 100%;
+    }
+
+    .filter-group:has(#region) {
+        max-width: 100%;
+    }
+
+    /* Таблиці */
+    .table-wrapper {
+        margin: 0 -1rem;
+    }
+
+    table {
+        min-width: 400px;
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 0.6rem;
+    }
+
+    td img {
+        max-width: 80px;
+    }
+
+    /* Карта */
+    #map {
+        height: 300px;
+    }
+
+    .map-legend {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    /* Чат */
+    .admin-chat-container, .chat-container {
+        flex-direction: column;
+    }
+
+    .user-list {
+        min-width: 100%;
+    }
+
+    .chat-messages {
+        max-height: 400px;
+        padding: 1rem;
+    }
+
+    .chat-input {
+        flex-direction: column;
+    }
+
+    textarea {
+        min-height: 90px;
+        font-size: 0.95rem;
+    }
+
+    /* Сітки */
+    .stats-grid, .features-grid, .reports-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .gallery-item img {
+        height: 120px;
+    }
+
+    /* Повідомлення */
+    .success-message, .error-message, .filter-message {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    /* Пагінація */
+    .pagination .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Стилі для великих екранів (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Загальні стилі */
+    main {
+        padding: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    /* Хедер */
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    nav a {
+        padding: 0.75rem 1rem;
+        font-size: 1.1rem;
+    }
+
+    /* Форми */
+    .form-section {
+        padding: 1.5rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+
+    .form-group-inline {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Фільтри */
+    .filter-form, .filters form {
+        flex-wrap: wrap;
+    }
+
+    .filter-group {
+        max-width: 200px;
+    }
+
+    .filter-group:has(#region) {
+        max-width: 300px;
+    }
+
+    /* Таблиці */
+    table {
+        min-width: 500px;
+    }
+
+    th, td {
+        padding: 0.75rem;
+    }
+
+    td img {
+        max-width: 90px;
+    }
+
+    /* Карта */
+    #map {
+        height: 350px;
+    }
+
+    /* Чат */
+    .admin-chat-container {
+        flex-direction: row;
+    }
+
+    .user-list {
+        min-width: 300px;
+    }
+
+    .chat-messages {
+        max-height: 500px;
+    }
+
+    /* Сітки */
+    .reports-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+/* Стилі для дуже великих екранів (1025px і більше) */
+@media (min-width: 1025px) {
+    /* Максимальна ширина контенту */
+    main {
+        max-width: 1400px;
+    }
+
+    /* Форми */
+    .form-group-inline {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .filter-group:has(#region) {
+        max-width: 400px;
+    }
+
+    /* Карта */
+    #map {
+        height: 400px;
+    }
+
+    /* Чат */
+    .user-list {
+        min-width: 350px;
+    }
+
+    .chat-messages {
+        max-height: 600px;
+    }
+
+    /* Сітки */
+    .reports-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Анімації для плавних переходів */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
